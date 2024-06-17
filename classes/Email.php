@@ -20,7 +20,7 @@ public $token;
     }
 
     public function enviarConfirmacion(){
-$URLWEB = 'https://bagbafe.nyc.dom.my.id';
+$URLWEB = 'https://faqgebo.nyc.dom.my.id';
 
         $mail = new PHPMailer();
         $mail->isSMTP();
@@ -55,7 +55,7 @@ $URLWEB = 'https://bagbafe.nyc.dom.my.id';
 
     }
    public function enviarInstrucciones(){
-    $URLWEB = 'https://bagbafe.nyc.dom.my.id'; //Cambiamos el HOST LOCAL
+    $URLWEB = 'https://faqgebo.nyc.dom.my.id'; //Cambiamos el HOST LOCAL
     $mail = new PHPMailer();
         $mail->isSMTP();
        $mail->Host = 'sandbox.smtp.mailtrap.io';

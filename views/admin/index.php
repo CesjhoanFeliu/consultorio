@@ -4,7 +4,7 @@
 include __DIR__ . "/../templates/barra.php"
 ?>
 
-<h2>Buscar Citas</h2>
+<h2>Buscar Citas CAMBIO</h2>
 <div class="busqueda">
     <form action="" class="formulario">
         <div class="campo">

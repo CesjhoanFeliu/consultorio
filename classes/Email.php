@@ -5,6 +5,7 @@ namespace Classes;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class Email{
+
 public $email;
 public $nombre;
 public $token;
@@ -19,13 +20,15 @@ public $token;
     }
 
     public function enviarConfirmacion(){
+$URLWEB = 'https://bagbafe.nyc.dom.my.id';
+
         $mail = new PHPMailer();
         $mail->isSMTP();
-       $mail->Host = $_ENV['EMAIL_HOST'];
-       $mail->SMTPAuth = true;
-       $mail->Port = $_ENV['EMAIL_PORT'];
-       $mail->Username = $_ENV['EMAIL_USER'];
-       $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->Port = '2525';
+        $mail->Username = 'd14cad08d02c2c';
+        $mail->Password = '36947dd19d95e8';
        $mail->setFrom("cesjhoandejesus@gmail.com"); //Quien envia
        $mail->addAddress("cesjhoandejesus@gmail.com", ""); //Quien Recibe
        $mail->Subject = "Confirma tu cuenta";
@@ -37,7 +40,7 @@ public $token;
        $contenido = "<html>";
        $contenido .= "<p><strong>Hola " . $this->email . "</strong> 
        Has creado tu cuenta en el consultorio odontologico Dr. Yolimar Duerto, Solo debes confirmar tu cuenta con el siguiente enlace;</p>";
-       $contenido .= "<p>Presiona Aquí: <a href='". $_ENV['APP_URL'] ."/confirmar-cuenta?token="
+       $contenido .= "<p>Presiona Aquí: <a href='". $URLWEB ."/confirmar-cuenta?token="
        . $this->token . "'>Confirmar Cuenta </a> </p>";
        $contenido .= "<p>Si tu no solicitaste este cambio puedes ignorar el mensaje</p>";
        $contenido .= "</html>";
@@ -52,13 +55,14 @@ public $token;
 
     }
    public function enviarInstrucciones(){
+    $URLWEB = 'https://bagbafe.nyc.dom.my.id'; //Cambiamos el HOST LOCAL
     $mail = new PHPMailer();
         $mail->isSMTP();
-       $mail->Host = $_ENV['EMAIL_HOST'];
+       $mail->Host = 'sandbox.smtp.mailtrap.io';
        $mail->SMTPAuth = true;
-       $mail->Port = $_ENV['EMAIL_PORT'];
-       $mail->Username = $_ENV['EMAIL_USER'];
-       $mail->Password = $_ENV['EMAIL_PASS'];
+       $mail->Port = '2525';
+       $mail->Username = 'd14cad08d02c2c';
+       $mail->Password = '36947dd19d95e8';
 
    
    $mail->setFrom("cesjhoandejesus@gmail.com"); //Quien envia
@@ -72,7 +76,7 @@ public $token;
    $contenido = "<html>";
    $contenido .= "<p><strong>Hola " . $this->email . "</strong> 
    Has solicitado tu contraseña, sigue el siguiente enlaace para hacerlo.</p>";
-   $contenido .= "<p>Presiona Aquí: <a href='". $_ENV['APP_URL'] ."/recuperar?token="
+   $contenido .= "<p>Presiona Aquí: <a href='". $URLWEB ."/recuperar?token="
    . $this->token . "'>Reestablecer Contraseña</a> </p>";
    $contenido .= "<p>Si tu no solicitaste este cambio puedes ignorar el mensaje</p>";
    $contenido .= "</html>";

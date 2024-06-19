@@ -20,7 +20,6 @@ public $token;
     }
 
     public function enviarConfirmacion(){
-$URLWEB = 'https://faqgebo.nyc.dom.my.id';
 
         $mail = new PHPMailer();
         $mail->isSMTP();
@@ -29,7 +28,7 @@ $URLWEB = 'https://faqgebo.nyc.dom.my.id';
         $mail->Port = '2525';
         $mail->Username = 'd14cad08d02c2c';
         $mail->Password = '36947dd19d95e8';
-       $mail->setFrom("cesjhoandejesus@gmail.com"); //Quien envia
+       $mail->setFrom("odontologicoyolimarduerto@gmail.com"); //Quien envia
        $mail->addAddress("cesjhoandejesus@gmail.com", ""); //Quien Recibe
        $mail->Subject = "Confirma tu cuenta";
 
@@ -40,8 +39,7 @@ $URLWEB = 'https://faqgebo.nyc.dom.my.id';
        $contenido = "<html>";
        $contenido .= "<p><strong>Hola " . $this->email . "</strong> 
        Has creado tu cuenta en el consultorio odontologico Dr. Yolimar Duerto, Solo debes confirmar tu cuenta con el siguiente enlace;</p>";
-       $contenido .= "<p>Presiona Aquí: <a href='". $URLWEB ."/confirmar-cuenta?token="
-       . $this->token . "'>Confirmar Cuenta </a> </p>";
+       $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";   
        $contenido .= "<p>Si tu no solicitaste este cambio puedes ignorar el mensaje</p>";
        $contenido .= "</html>";
 
@@ -55,7 +53,7 @@ $URLWEB = 'https://faqgebo.nyc.dom.my.id';
 
     }
    public function enviarInstrucciones(){
-    $URLWEB = 'https://faqgebo.nyc.dom.my.id'; //Cambiamos el HOST LOCAL
+    $URLWEB = 'https://localhost:3000'; //Cambiamos el HOST LOCAL
     $mail = new PHPMailer();
         $mail->isSMTP();
        $mail->Host = 'sandbox.smtp.mailtrap.io';
@@ -76,8 +74,7 @@ $URLWEB = 'https://faqgebo.nyc.dom.my.id';
    $contenido = "<html>";
    $contenido .= "<p><strong>Hola " . $this->email . "</strong> 
    Has solicitado tu contraseña, sigue el siguiente enlaace para hacerlo.</p>";
-   $contenido .= "<p>Presiona Aquí: <a href='". $URLWEB ."/recuperar?token="
-   . $this->token . "'>Reestablecer Contraseña</a> </p>";
+   $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/recuperar?token=" . $this->token . "'>Reestablecer Password</a>";        
    $contenido .= "<p>Si tu no solicitaste este cambio puedes ignorar el mensaje</p>";
    $contenido .= "</html>";
 

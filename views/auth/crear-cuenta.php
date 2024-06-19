@@ -8,16 +8,16 @@
 <form method="POST" action="/crear-cuenta" class="formulario">
     <div class="campo">
         <label for="nombre" class="">Nombre</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" value="<?php echo s($usuario->nombre); ?>" class="">
+        <input onkeypress="return ' CáéíóúabcdefghijklmnñopqrstuvwxyzÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.includes(event.key)" type="text" id="nombre" name="nombre" placeholder="Tu Nombre" value="<?php echo s($usuario->nombre); ?>" class="">
   
 </div>
 <div class="campo">
         <label for="apellido" class="">Apellido</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Tu Apellido" value="<?php echo s($usuario->apellido); ?>" class="">
+        <input onkeypress="return ' áéíóúabcdefghijklmnñopqrstuvwxyzÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.includes(event.key)" type="text" id="apellido" name="apellido" placeholder="Tu Apellido" value="<?php echo s($usuario->apellido); ?>" class="">
 </div>
 <div class="campo">
         <label for="telefono" class="">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono" value="<?php echo s($usuario->telefono); ?>" class="">
+        <input onkeypress="return '0123456789'.includes(event.key)" type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono" value="<?php echo s($usuario->telefono); ?>" class="">
 </div>
 <div class="campo">
         <label for="email" class="">E-mail</label>

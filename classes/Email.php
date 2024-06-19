@@ -73,7 +73,7 @@ public $token;
 
    $contenido = "<html>";
    $contenido .= "<p><strong>Hola " . $this->email . "</strong> 
-   Has solicitado tu contraseña, sigue el siguiente enlaace para hacerlo.</p>";
+   Has solicitado tu contraseña, sigue el siguiente enlace para hacerlo.</p>";
    $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/recuperar?token=" . $this->token . "'>Reestablecer Password</a>";        
    $contenido .= "<p>Si tu no solicitaste este cambio puedes ignorar el mensaje</p>";
    $contenido .= "</html>";
